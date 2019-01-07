@@ -33,12 +33,16 @@ class TodoController extends Telegram.TelegramBaseController {
                 $.sendMessage('*Checked todo!*',{ parse_mode: 'Markdown' });
             });
     }
+    startHandler($) {
+        $.sendMessage('Welcome! Let\'s begin.');
+    }
 
     get routes() {
         return {
             'addCommand': 'addHandler',
             'getCommand': 'getHandler',
-            'checkCommand': 'checkHandler'
+            'checkCommand': 'checkHandler',
+            'startCommand': 'startHandler'
         };
     }
 
